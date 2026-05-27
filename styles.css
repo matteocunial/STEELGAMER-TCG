@@ -351,6 +351,9 @@ a {
   text-align: center;
   position: relative;
   z-index: 3;
+  width: min(100%, 1100px);
+  margin-inline: auto;
+  padding-inline: clamp(0.5rem, 2vw, 1.2rem);
 }
 
 .hero-badges {
@@ -381,13 +384,14 @@ a {
 .hero-title {
   margin: 0.35rem 0 0;
   font-family: "Orbitron", sans-serif;
-  font-size: clamp(2.4rem, 9vw, 7.3rem);
+  font-size: clamp(2.2rem, 8.2vw, 6.1rem);
   font-weight: 900;
   line-height: 0.95;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   position: relative;
   color: rgba(214, 226, 244, 0.96);
   text-shadow: 0 0 30px rgba(141, 190, 255, 0.25), 0 5px 15px rgba(0, 0, 0, 0.55);
+  text-wrap: balance;
 }
 
 .hero-title::after {
@@ -403,10 +407,11 @@ a {
 
 .hero-title span {
   display: block;
-  font-size: clamp(1.8rem, 5vw, 3.8rem);
+  font-size: clamp(1.35rem, 4.6vw, 3rem);
   color: transparent;
   background: linear-gradient(96deg, #9dd2ff 0%, #f2e7ff 45%, #89e8ff 95%);
   background-clip: text;
+  margin-top: 0.2rem;
 }
 
 .hero-subtitle {
@@ -923,11 +928,12 @@ a {
   }
 
   .hero-title {
-    font-size: clamp(2.9rem, 15vw, 4.2rem);
+    font-size: clamp(2.1rem, 12vw, 3rem);
+    line-height: 0.98;
   }
 
   .hero-title span {
-    font-size: clamp(1.5rem, 8vw, 2.1rem);
+    font-size: clamp(1.2rem, 7.2vw, 1.75rem);
   }
 
   .hero-subtitle {
