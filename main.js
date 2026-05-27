@@ -29,12 +29,14 @@ const onScroll = () => {
   if (heroSection) {
     heroSection.style.setProperty("--heroShift", `${Math.min(currentY * 0.35, 120)}px`);
   }
-  const sections = document.querySelectorAll(".section");
-  sections.forEach((section) => {
-    const rect = section.getBoundingClientRect();
-    const shift = Math.max(-8, Math.min(8, (window.innerHeight - rect.top) * 0.012 - 4));
-    section.style.setProperty("--sectionShift", `${shift.toFixed(2)}px`);
-  });
+  if (!coarsePointer && !reduceMotion) {
+    const sections = document.querySelectorAll(".section");
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      const shift = Math.max(-8, Math.min(8, (window.innerHeight - rect.top) * 0.012 - 4));
+      section.style.setProperty("--sectionShift", `${shift.toFixed(2)}px`);
+    });
+  }
 
   if (currentY > lastScrollY && currentY > 140) {
     navbar.style.transform = "translate3d(0,-120%,0)";

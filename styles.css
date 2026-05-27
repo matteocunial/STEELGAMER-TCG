@@ -875,8 +875,28 @@ a {
 }
 
 @media (max-width: 720px) {
+  html,
+  body {
+    font-size: 17px;
+  }
+
+  .container {
+    width: min(94vw, 540px);
+  }
+
   .navbar {
     inset: 0.6rem 0 auto;
+  }
+
+  .nav-inner {
+    border-radius: 18px;
+    padding: 0.5rem 0.58rem 0.5rem 0.68rem;
+    gap: 0.55rem;
+  }
+
+  .brand-logo {
+    width: 38px;
+    height: 38px;
   }
 
   .brand-name {
@@ -912,8 +932,38 @@ a {
 
   .hero-subtitle {
     font-size: 1.15rem;
-    max-width: 22ch;
+    max-width: 24ch;
     margin-inline: auto;
+  }
+
+  .hero-badges {
+    max-width: 340px;
+    margin-inline: auto;
+    margin-top: 0.8rem;
+  }
+
+  .hero-badges span {
+    font-size: 0.84rem;
+    padding: 0.25rem 0.56rem;
+  }
+
+  .section {
+    padding: 3.4rem 0;
+    transform: none;
+  }
+
+  .section-title {
+    font-size: clamp(1.58rem, 8vw, 2.1rem);
+  }
+
+  .section-lead {
+    font-size: 1.06rem;
+  }
+
+  .holo-card {
+    gap: 0.8rem;
+    min-height: unset;
+    padding: 1rem;
   }
 
   .floating-cards {
@@ -925,7 +975,34 @@ a {
   }
 
   .game-card-art {
-    width: 84px;
+    width: 78px;
+  }
+
+  .game-kicker {
+    font-size: 0.72rem;
+  }
+
+  .holo-card h3 {
+    font-size: 1.15rem;
+    margin: 0;
+  }
+
+  .holo-card p {
+    font-size: 0.99rem;
+  }
+
+  .contact-card,
+  .why-card,
+  .events-panel {
+    padding: 1rem;
+  }
+
+  .footer {
+    padding: 1rem 0 1.4rem;
+  }
+
+  .footer-inner {
+    font-size: 0.95rem;
   }
 }
 
@@ -954,6 +1031,15 @@ a {
 
   .hero-spotlight,
   .noise-layer {
+    display: none;
+  }
+
+  .hero,
+  .section {
+    transform: none !important;
+  }
+
+  .intro-loader {
     display: none;
   }
 }
