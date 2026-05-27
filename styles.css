@@ -624,7 +624,6 @@ a {
   padding: 1px;
   pointer-events: none;
   opacity: 0.65;
-  animation: spinBorder 12s linear infinite;
 }
 
 .why-card h3,
