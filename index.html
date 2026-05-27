@@ -36,6 +36,11 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <div class="intro-loader" id="introLoader" aria-hidden="true">
+      <img src="./assets/logo.png" alt="" class="intro-logo" />
+      <p>STEELGAMER TCG</p>
+    </div>
+    <div class="noise-layer" aria-hidden="true"></div>
     <div class="cursor-dot" aria-hidden="true"></div>
     <div class="cursor-ring" aria-hidden="true"></div>
 
@@ -57,18 +62,19 @@
           <a href="#contatti">Contatti</a>
         </nav>
 
-        <a class="btn btn-whatsapp" href="https://chat.whatsapp.com/Ij1s0wVM6m710SA8yilgF0?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnrEPo0MYnMUgvLBYdox9iuAN5sHj_Mr90qlGYEnXxq60obmdQ6iRnRyhwJ1Q_aem_stHHA_8G-9A5PYCT8OETiQ" target="_blank" rel="noopener noreferrer">
+        <a class="btn btn-whatsapp" data-magnetic href="https://chat.whatsapp.com/Ij1s0wVM6m710SA8yilgF0?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnrEPo0MYnMUgvLBYdox9iuAN5sHj_Mr90qlGYEnXxq60obmdQ6iRnRyhwJ1Q_aem_stHHA_8G-9A5PYCT8OETiQ" target="_blank" rel="noopener noreferrer">
           Community WhatsApp
         </a>
       </div>
     </header>
 
     <main id="home">
-      <section class="hero">
+      <section class="hero" id="hero">
         <div class="hero-bg" aria-hidden="true"></div>
         <div class="hero-grid" aria-hidden="true"></div>
         <div class="hero-glow glow-a" aria-hidden="true"></div>
         <div class="hero-glow glow-b" aria-hidden="true"></div>
+        <div class="hero-spotlight" id="heroSpotlight" aria-hidden="true"></div>
         <div class="hero-particles" id="heroParticles" aria-hidden="true"></div>
         <div class="floating-cards" aria-hidden="true">
           <div class="mini-card c1" data-depth="1.05">
@@ -98,8 +104,8 @@
           </h1>
           <p class="hero-subtitle reveal">Il tuo negozio TCG di fiducia</p>
           <div class="hero-cta reveal">
-            <a class="btn btn-metal" href="#giochi">Scopri i nostri giochi</a>
-            <a class="btn btn-outline" href="#contatti">Vieni in negozio</a>
+            <a class="btn btn-metal" data-magnetic href="#giochi">Scopri i nostri giochi</a>
+            <a class="btn btn-outline" data-magnetic href="#contatti">Vieni in negozio</a>
           </div>
         </div>
       </section>
@@ -191,14 +197,15 @@
 
       <section class="section events" id="eventi">
         <div class="container events-panel reveal">
+          <p class="live-pill"><span></span>Community in movimento</p>
           <h2 class="section-title">Tornei & Eventi</h2>
           <p>
             Organizziamo tornei regolari in negozio. Per restare sempre aggiornato su date, format
             e novità, segui il nostro Instagram e unisciti alla Community WhatsApp.
           </p>
           <div class="events-cta">
-            <a class="btn btn-outline" href="https://www.instagram.com/steelgamer.tcg/" target="_blank" rel="noopener noreferrer">Segui su Instagram</a>
-            <a class="btn btn-metal" href="https://chat.whatsapp.com/Ij1s0wVM6m710SA8yilgF0?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnrEPo0MYnMUgvLBYdox9iuAN5sHj_Mr90qlGYEnXxq60obmdQ6iRnRyhwJ1Q_aem_stHHA_8G-9A5PYCT8OETiQ" target="_blank" rel="noopener noreferrer">Entra su WhatsApp</a>
+            <a class="btn btn-outline" data-magnetic href="https://www.instagram.com/steelgamer.tcg/" target="_blank" rel="noopener noreferrer">Segui su Instagram</a>
+            <a class="btn btn-metal" data-magnetic href="https://chat.whatsapp.com/Ij1s0wVM6m710SA8yilgF0?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnrEPo0MYnMUgvLBYdox9iuAN5sHj_Mr90qlGYEnXxq60obmdQ6iRnRyhwJ1Q_aem_stHHA_8G-9A5PYCT8OETiQ" target="_blank" rel="noopener noreferrer">Entra su WhatsApp</a>
           </div>
         </div>
       </section>
@@ -229,7 +236,7 @@
               <!-- TODO: inserire orari ufficiali del negozio -->
             </div>
           </div>
-          <a class="btn btn-metal maps-btn reveal" href="https://www.google.com/maps/search/Via+Della+Fonda+30B,+Noale+30033" target="_blank" rel="noopener noreferrer">Portami al negozio</a>
+          <a class="btn btn-metal maps-btn reveal" data-magnetic href="https://www.google.com/maps/search/Via+Della+Fonda+30B,+Noale+30033" target="_blank" rel="noopener noreferrer">Portami al negozio</a>
         </div>
       </section>
     </main>

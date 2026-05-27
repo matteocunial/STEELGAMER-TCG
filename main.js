@@ -2,21 +2,39 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").match
 const coarsePointer = window.matchMedia("(hover: none), (pointer: coarse)").matches;
 
 const navbar = document.getElementById("navbar");
+const introLoader = document.getElementById("introLoader");
 const revealEls = [...document.querySelectorAll(".reveal")];
 const yearEl = document.getElementById("year");
 const particleRoot = document.getElementById("heroParticles");
+const heroSection = document.getElementById("hero");
+const heroSpotlight = document.getElementById("heroSpotlight");
 const cursorDot = document.querySelector(".cursor-dot");
 const cursorRing = document.querySelector(".cursor-ring");
 const holoCards = [...document.querySelectorAll(".holo-card")];
 const miniCards = [...document.querySelectorAll(".mini-card")];
+const magneticEls = [...document.querySelectorAll("[data-magnetic]")];
 
 if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+if (introLoader && !reduceMotion) {
+  window.setTimeout(() => introLoader.classList.add("is-hidden"), 700);
+} else if (introLoader) {
+  introLoader.classList.add("is-hidden");
+}
 
 let lastScrollY = window.scrollY;
 const onScroll = () => {
   const currentY = window.scrollY;
   const shouldShrink = currentY > 12;
   navbar.classList.toggle("scrolled", shouldShrink);
+  if (heroSection) {
+    heroSection.style.setProperty("--heroShift", `${Math.min(currentY * 0.35, 120)}px`);
+  }
+  const sections = document.querySelectorAll(".section");
+  sections.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+    const shift = Math.max(-8, Math.min(8, (window.innerHeight - rect.top) * 0.012 - 4));
+    section.style.setProperty("--sectionShift", `${shift.toFixed(2)}px`);
+  });
 
   if (currentY > lastScrollY && currentY > 140) {
     navbar.style.transform = "translate3d(0,-120%,0)";
@@ -83,6 +101,16 @@ if (!reduceMotion && !coarsePointer && cursorDot && cursorRing) {
     cursorDot.style.opacity = "1";
     cursorRing.style.opacity = "1";
     cursorDot.style.transform = `translate3d(${targetX}px, ${targetY}px, 0) translate3d(-50%, -50%, 0)`;
+    if (heroSection && heroSpotlight) {
+      const rect = heroSection.getBoundingClientRect();
+      const inside = ev.clientY >= rect.top && ev.clientY <= rect.bottom;
+      if (inside) {
+        const x = ((ev.clientX - rect.left) / rect.width) * 100;
+        const y = ((ev.clientY - rect.top) / rect.height) * 100;
+        heroSection.style.setProperty("--spotX", `${x}%`);
+        heroSection.style.setProperty("--spotY", `${y}%`);
+      }
+    }
   };
 
   const animateRing = () => {
@@ -98,6 +126,21 @@ if (!reduceMotion && !coarsePointer && cursorDot && cursorRing) {
     cursorRing.style.opacity = "0";
   });
   requestAnimationFrame(animateRing);
+}
+
+if (!reduceMotion && !coarsePointer && magneticEls.length > 0) {
+  for (const el of magneticEls) {
+    el.addEventListener("mousemove", (ev) => {
+      const rect = el.getBoundingClientRect();
+      const x = ev.clientX - rect.left - rect.width / 2;
+      const y = ev.clientY - rect.top - rect.height / 2;
+      el.style.transform = `translate3d(${x * 0.14}px, ${y * 0.14}px, 0)`;
+    });
+
+    el.addEventListener("mouseleave", () => {
+      el.style.transform = "";
+    });
+  }
 }
 
 if (!reduceMotion && !coarsePointer) {
