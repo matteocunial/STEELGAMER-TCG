@@ -66,6 +66,9 @@
     <main id="home">
       <section class="hero">
         <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-glow glow-a" aria-hidden="true"></div>
+        <div class="hero-glow glow-b" aria-hidden="true"></div>
         <div class="hero-particles" id="heroParticles" aria-hidden="true"></div>
         <div class="floating-cards" aria-hidden="true">
           <div class="mini-card c1" data-depth="1.05">
@@ -84,6 +87,11 @@
 
         <div class="container hero-content">
           <p class="eyebrow reveal">Noale (VE) • Trading Card Games</p>
+          <div class="hero-badges reveal" aria-hidden="true">
+            <span>Carte singole</span>
+            <span>Booster box</span>
+            <span>Community attiva</span>
+          </div>
           <h1 class="hero-title reveal">
             STEELGAMER
             <span>TCG STORE</span>
@@ -122,20 +130,36 @@
 
           <div class="game-grid">
             <article class="holo-card reveal" data-accent="pokemon">
-              <h3>Pokémon TCG</h3>
-              <p>Espansioni, Elite Trainer Box e chase card per collezionisti e player.</p>
+              <img src="./assets/card-pokemon.png" alt="Carta Pokémon TCG" class="game-card-art" loading="lazy" />
+              <div class="game-card-copy">
+                <p class="game-kicker">Collezione</p>
+                <h3>Pokémon TCG</h3>
+                <p>Espansioni, Elite Trainer Box e chase card per collezionisti e player.</p>
+              </div>
             </article>
             <article class="holo-card reveal" data-accent="magic">
-              <h3>Magic: The Gathering</h3>
-              <p>Draft, Commander e set latest con disponibilità aggiornata.</p>
+              <img src="./assets/card-magic.png" alt="Carta Magic: The Gathering" class="game-card-art" loading="lazy" />
+              <div class="game-card-copy">
+                <p class="game-kicker">Meta competitivo</p>
+                <h3>Magic: The Gathering</h3>
+                <p>Draft, Commander e set latest con disponibilità aggiornata.</p>
+              </div>
             </article>
             <article class="holo-card reveal" data-accent="onepiece">
-              <h3>One Piece TCG</h3>
-              <p>Prodotti ufficiali per giocare, collezionare e competere.</p>
+              <img src="./assets/card-onepiece.png" alt="Carta One Piece TCG" class="game-card-art" loading="lazy" />
+              <div class="game-card-copy">
+                <p class="game-kicker">Nuove uscite</p>
+                <h3>One Piece TCG</h3>
+                <p>Prodotti ufficiali per giocare, collezionare e competere.</p>
+              </div>
             </article>
             <article class="holo-card reveal" data-accent="riftbound">
-              <h3>Riftbound</h3>
-              <p>Nuove uscite e supporto dedicato per chi vuole entrare subito nel meta.</p>
+              <img src="./assets/card-riftbound.png" alt="Carta Riftbound" class="game-card-art" loading="lazy" />
+              <div class="game-card-copy">
+                <p class="game-kicker">Scena emergente</p>
+                <h3>Riftbound</h3>
+                <p>Nuove uscite e supporto dedicato per chi vuole entrare subito nel meta.</p>
+              </div>
             </article>
           </div>
         </div>
